@@ -8,9 +8,12 @@ document.getElementById('out').innerHTML = 'Ваш возраст: ' + yourYears
 // задача два
 document.getElementById('push').onclick = function() {
     var yourNum = document.getElementById('numbers').value;
-    var cost = document.getElementsByClassName('cost').value;
     var yourAge = document.getElementById('yourAge').value;
-
-    console.log(yourNum + ' ' + cost + ' ' + yourAge);
+    var cost = document.getElementsByName('cost');
+    for (var i = 0; i < cost.length; i++) {
+        if (cost[i].type == "radio" && cost[i].checked) {
+            console.log('Your num: ' + yourNum + ';   Cost: ' + cost[i].value + ';   Your age: ' + yourAge);
+        };
+    };
     // console.log();
 };
